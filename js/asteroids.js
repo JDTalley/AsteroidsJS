@@ -1,14 +1,25 @@
-var GAME_FPS = 60;
+var canvas = new Canvas("game-canvas");
 
-var msBetweenFrames = 1000 / GAME_FPS;
-var canvas = document.getElementById("game-canvas");
-var context = canvas.msGetInputContext('2d');
-var width = canvas.width;
-var height = canvas.height;
-setTimeout(gameTick, msBetweenFrames);
 
 function gameTick() {
     // DO STUFF
 
     setTimeout(gameTick, msBetweenFrames);
 }
+
+function startGame() {
+    this.canvas.setBackground("#000000");
+
+    queueTick();
+}
+
+function queueTick() {
+    setTimeout(gameTick, msBetweenFrames);
+}
+
+var GAME_FPS = 60;
+
+var msBetweenFrames = 1000 / GAME_FPS;
+
+
+startGame();
