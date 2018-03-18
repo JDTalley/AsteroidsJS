@@ -8,4 +8,19 @@ function Canvas(id) {
         this.context.fillStyle = color;
         this.context.fillRect(0, 0, this.width, this.height);
     }
+
+    this.drawSpaceship = function(color, x, y, orientation) {
+        this.context.fillStyle = color;
+
+        this.context.translate((this.width / 2) + x, (this.height / 2) + y);
+        this.context.rotate(orientation * Math.PI / 180);
+        this.context.beginPath();
+        this.context.moveTo(0, - 10);
+        this.context.lineTo(-6, 10);
+        this.context.lineTo(6, 10);
+        this.context.fill();
+        this.context.rotate(-orientation * Math.PI / 180);
+        this.context.setTransform(1, 0, 0, 1, 0, 0);
+
+    }
 }

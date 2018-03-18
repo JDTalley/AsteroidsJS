@@ -1,17 +1,27 @@
 var canvas = new Canvas("game-canvas");
 var spaceship = new Spaceship();
 
+var keys = [];
+window.onkeyup = function(e) { keys[e.keyCode] = false; }
+window.onkeydown = function(e) { keys[e.keyCode] = true; }
 
 function gameTick() {
-    // DO STUFF
-    this.redrawCanvas();
+    
+    // HANDLE ROTATION
+    if(keys[37]) {
+        spaceship.rotateLeft();
+    }
+
+    if(keys[39]) {
+        spaceship.rotateRight();
+    }
+
+    redrawCanvas();
 
     setTimeout(gameTick, msBetweenFrames);
 }
 
 function startGame() {
-    this.canvas.setBackground("#000000");
-
     queueTick();
 }
 
@@ -20,7 +30,8 @@ function queueTick() {
 }
 
 function redrawCanvas() {
-    canvas.drawSpaceship(spaceship.x, spaceship.y, spaceship.orientation);
+    canvas.setBackground("#000000");
+    canvas.drawSpaceship("#FFFFFF", spaceship.x, spaceship.y, spaceship.orientation);
 }
 
 var GAME_FPS = 60;
