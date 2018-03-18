@@ -1,8 +1,10 @@
 var canvas = new Canvas("game-canvas");
+var spaceship = new Spaceship();
 
 
 function gameTick() {
     // DO STUFF
+    this.redrawCanvas();
 
     setTimeout(gameTick, msBetweenFrames);
 }
@@ -15,6 +17,10 @@ function startGame() {
 
 function queueTick() {
     setTimeout(gameTick, msBetweenFrames);
+}
+
+function redrawCanvas() {
+    canvas.drawSpaceship(spaceship.x, spaceship.y, spaceship.orientation);
 }
 
 var GAME_FPS = 60;
