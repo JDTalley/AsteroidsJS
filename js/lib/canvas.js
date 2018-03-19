@@ -23,4 +23,20 @@ function Canvas(id) {
         this.context.setTransform(1, 0, 0, 1, 0, 0);
 
     }
+
+    this.drawAsteroid = function(x, y, dx, dy, size) {
+        this.context.strokeStyle = '#000000'
+        this.context.lineWidth = 1;
+
+        var numberOfSides = 10;
+        this.context.beginPath();
+        this.context.moveTo (x +  size * Math.cos(0), y +  size *  Math.sin(0));          
+        for (var i = 1; i <= numberOfSides-1; i += 1) 
+        {
+            this.context.lineTo (x + (size + 20 * (Math.floor((Math.random() * 3) + 1))) * Math.cos(i * 2 * Math.PI / numberOfSides),
+            y + (size + 20 * (Math.floor((Math.random() * 3) + 1))) * Math.sin(i * 2 * Math.PI / numberOfSides));
+        }
+        this.context.lineTo (x +  size * Math.cos(0), y +  size *  Math.sin(0));
+        this.context.stroke();
+    }
 }
