@@ -4,4 +4,5 @@ fuction Asteroid(x, y, dx, dy, size) {
     this.dx = dx;
     this.dy = dy;
     this.size = size;
+
 }

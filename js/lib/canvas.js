@@ -14,7 +14,7 @@ function Canvas(id) {
         this.context.lineWidth = 1;
         this.context.beginPath();
         for (var i=0; i<9; i++) {
-            ctx.moveTo (Xcenter +  sizex * Math.cos(0), Ycenter +  sizey *  Math.sin(0));          
+            ctx.moveTo (Xcenter +  sizex * Math.cos(0), Ycenter +  sizey *  Math.sin(0));       
         {
             ctx.lineTo (Xcenter + (sizex + 10 * (Math.floor((Math.random() * 3) + 1))) * Math.cos(i * 2 * Math.PI / numberOfSides), Ycenter + (sizey + 10 * (Math.floor((Math.random() * 3) + 1))) * Math.sin(i * 2 * Math.PI / numberOfSides));
         }

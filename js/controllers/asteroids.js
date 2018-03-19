@@ -21,6 +21,7 @@ function queueTick() {
 
 function redrawCanvas() {
     canvas.drawSpaceship(spaceship.x, spaceship.y, spaceship.orientation);
+    canvas.drawAsteroid(0, 0, 0, 0, 3);
 }
 
 var GAME_FPS = 60;
