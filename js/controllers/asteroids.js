@@ -6,6 +6,8 @@ var keys = [];
 window.onkeyup = function(e) { keys[e.keyCode] = false; }
 window.onkeydown = function(e) { keys[e.keyCode] = true; }
 
+var entities = [];
+
 function gameTick() {
     
     // HANDLE ROTATION
@@ -16,6 +18,17 @@ function gameTick() {
     if(keys[39]) {
         spaceship.rotateRight();
     }
+
+    // Acceleration / Deceleration
+    if(keys[38]) {
+        spaceship.accelerate();
+    }
+
+    if(keys[40]) {
+        spaceship.decelerate();
+    }
+
+    spaceship.updatePosition();
 
     redrawCanvas();
 
