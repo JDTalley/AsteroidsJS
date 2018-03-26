@@ -46,7 +46,7 @@ function queueTick() {
 function redrawCanvas() {
     canvas.setBackground("#000000");
     canvas.drawSpaceship("#FFFFFF", spaceship.x, spaceship.y, spaceship.orientation);
-    canvas.drawAsteroid(asteroid.x, asteroid.y, asteroid.size);
+    canvas.drawAsteroid(asteroid.points, asteroid.x, asteroid.y);
     //canvas.drawAsteroid(500, 100, 0, 0, 2);
 }
 
