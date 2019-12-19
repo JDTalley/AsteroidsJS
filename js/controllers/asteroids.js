@@ -90,6 +90,12 @@ function gameTick() {
         if (spaceship.checkCollision(asteroids[item])) {
             sBoom.play();
             console.log("DEATH!!");
+            spaceship.setX(width/2);
+            spaceship.setY(height/2)
+            spaceship.setDX(0);
+            spaceship.setDY(0);
+            spaceship.updatePosition(width, height);
+            asteroids.splice(item, 1);
         }
     }
 

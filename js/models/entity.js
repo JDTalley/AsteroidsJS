@@ -26,6 +26,14 @@ class Entity {
         this.y = y;
     }
 
+    setDX(x) {
+        this.dx = x;
+    }
+
+    setDY(y) {
+        this.dy = y;
+    }
+
     updatePosition(width, height) {
         this.x += this.dx;
         this.y += this.dy;
