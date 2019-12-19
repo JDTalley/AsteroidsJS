@@ -55,7 +55,15 @@ function gameTick() {
 
     // Asteroid Spawning
     if (asteroids.length < 1 && frame % 30 == 0) {
-        asteroids.push(new Asteroid(width/2+50, height/2+50, 0, 2, 1, 6));
+        var spawnx = Math.random() * width;
+        var spawny = Math.random() * height;
+        var spawndx = Math.random() * 3;
+        var spawndy = Math.random() * 3;
+        var newAsteroid = new Asteroid(spawnx, spawny, spawndx, spawndy, 1, 6)
+        if (!spaceship.checkCollision(newAsteroid)){
+            asteroids.push(newAsteroid)
+        }
+        // asteroids.push(new Asteroid(width/2+50, height/2+50, 0, 2, 1, 6));
     }
 
 
