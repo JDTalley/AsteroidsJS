@@ -95,6 +95,7 @@ function gameTick() {
             spaceship.setDX(0);
             spaceship.setDY(0);
             spaceship.updatePosition(width, height);
+            spaceship.setOrientation(0);
             asteroids.splice(item, 1);
         }
     }

@@ -34,6 +34,10 @@ class Entity {
         this.dy = y;
     }
 
+    setOrientation(val){
+        this.orientation = val;
+    }
+
     updatePosition(width, height) {
         this.x += this.dx;
         this.y += this.dy;
